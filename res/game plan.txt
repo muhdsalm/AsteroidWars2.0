@@ -1,0 +1,147 @@
+IDEAS:
+Main screen:
+1. Finish the 'help' button feature.
+2. When you press help, it will move you to a different page (just like how when you die, it takes you to the 'game over page'.
+3. In that page, there will be 3 side bars (like google chrome tabs, but on the left side).
+4. On the first side bar, it will say 'controls', and when you click on you, it will take you to the controls page. The page will tell you stuff like 'WASD to move, R to restart' etc.
+5. On the second side bar, it should say 'Info', and in that page, it should tell you about the main purpose on the game, about it, who made it, stuff like that.
+6. On the 3rd sidebar, it should say 'settings' so when you click on it, you can change the volume, language, etc.
+That concludes the 'help' section
+NOTE: I will send you the textures and stuff, and make sure there's a 'back' button when going through different pages.
+
+Settings:
+1. Add a 'shop' button under the 'help' button
+2. When you click on shop, it will take you to a similar page-format like the help section, with side bars. (I will send a picture of how it's supposed to look like)
+3. There should be 4 sidebars.
+4. The first side bar should be 'rockets', where you can purchase different rockets.
+5. The second sidebar should be 'upgrades', where you can purchase upgrades such as longer rocket fuel, and rocket cools down faster, etc.
+6. The 3rd sidebar should be 'starter power-ups', where you can purchase power-ups, to use in-game (more detail given in the power-ups section below)
+7. The 4th sidebar should be 'background selector', where the player can select their own background (Once again, I will send textures).
+That concludes the 'shop' section
+
+My station:
+1. Add a 'My station' button at the bottom right of the screen.
+2. When you click on it, it shows you all your rockets, upgrades, and power-ups you purchased.
+3. In the station, you can pick what rocket you want to use (only if it's purchased).
+That concludes the 'My station' section.
+POWER UPS
+Here are the power ups:
+
+Engine fans
+Cools down your rocket engine extremely quickly, therefore allows you to shoot as much lasers as you want! (engine doesn't heat up at all for the given power up period).
+Price: 500 Golden Asteroids (G.A.)
+Lasts: 15 seconds.
+
+Mini rockets
+2 mini rockets fly and connect to your rocket, and allowing you to shoot 3 bullets at a time!
+Price: 450 Golden Asteroids (G.A.)
+Lasts: 30 seconds
+
+Space-time shield
+Protects your rocket with a shield, and can withstand only 10 hits.
+Price: 700 Golden Asteroids (G.A.)
+Lasts: 1 minute (unless gets hit by asteroids 10 times)
+
+Asteroid sweep
+Destroys all nearby asteroids.
+Price: 650 Golden Asteroids (G.A.)
+Lasts: 1 use.
+
+This concludes the power-ups section (textures will be sent) (DM @Krispijello  for any problems) 
+ROCKETS
+Here are all the types of rockets:
+
+Bullet rocket
+It's a thin rocket, and allows you to go between small spaces.
+Price: 250 G.A.
+
+Lucky rocket
+When in use, Golden Asteroids appear 10% more frequently.
+Price: 750 G.A.
+
+T.I.M.E. rocket
+Has a built in power-up that can slow down time so you can shoot asteroids quickly.
+Price: 1000 G.A.
+Power up: Slow mode, can be used once every 5 minutes, and effect lasts for 15 seconds.
+
+U.S. Military rocket 3000
+A very strong rocket, built to withstand the hits from asteroids. Using this rocket, there will be a 25% chance that you won't die when being hit by an asteroid.
+Price: 1250 G.A.
+
+Lucky military rocket
+When in use, there is a 35% chance you won't die when being hit by an asteroid, and Golden Asteroids appear 15% more frequently.
+Price: 2500 G.A.
+
+That concludes the rocket section.
+CURRENCY
+
+Golden Asteroids are the currency, and the way to get them, is to shoot them. Golden Asteroids have 10% chance of spawning, and when shot, gives you 5-10 Golden Asteroid currency, which you can spend on stuff in the shop.
+
+That concludes the rockets section.
+UPGRADES
+Here are all the upgrades: (REMEMBER: Upgrades are basically power ups, but permanent)
+
+Coolant jug
+You can shoot 20 lasers, instead of 15, before your rocket overheats.
+Price: 900 G.A.
+
+Flex tape
+Your rocket will have a +15% chance of not breaking when being hit by an asteroid.
+Price: 1100 G.A.
+
+Flex tape II
+(Can only be unlocked after buying flex tape I) Your rocket will have a +5% chance of not breaking when being hit by an asteroid.
+Price: 1500 G.A.
+
+Lucky traveler
+Golden asteroids appear +5% more frequently.
+Price: 1750 G.A.
+
+Coolant jug II
+(can only be unlocked after buying coolant jug I)
+You can now shoot 25 lasers before your rocket overheats.
+Price: 2000 G.A.
+
+Lucky traveler II
+Golden asteroids appear +7% more frequently.
+Price: 2500 G.A.
+
+That concludes the upgrades section. (DM @Krispijello  for any problems)
+Game mechanics
+
+Make an explosion when the rocket overheats.
+
+Add sounds.
+
+When the player starts the game, a huge text will appear in the player's screen saying "Approaching asteroid belt" in red colour, and it blinks 3 times.
+When the player reaches 5000 points, they have passed through the asteroid belt.
+
+Then the game gives a warning "Jupiter is approaching, keep shooting!"
+
+Then a giant Jupiter appears, and there will be a health bar at the bottom, where you have to shoot Jupiter until it, well, dies. (Jupiter requires 30 hits to die, and each hit gives the player 15 points)
+When Jupiter is gone, the game will say, in huge text, "Approaching Kuiper belt"
+
+When the player has reached more than 12,000 points, they have passed the Kuiper belt.
+Then the game gives a warning "Proxima Centauri is approaching, keep shooting!"
+
+(This time, Proxima Centauri will need 50 hits to die, and each hit gives the player 15 points.)
+
+When Proxima Centauri is dead, the game will give a message, again, in huge text "Approaching Oort Cloud"
+
+(From this section in the game, 'Frozen meteorites' will have a 15% chance of spawning, and requires 2 hits to break it, and each hit gives you 5 points.)
+
+
+When the player reacher 20,000 points, they have passed though the Oort Cloud. 
+
+Then the game gives a warning "The Unicorn Blackhole is approaching, keep shooting!"
+
+(This time, Unicorn Blackhole will need 80 hits to die, and each hit gives the player 15 points.)
+
+Then, in huge text, the game says "Approaching Universal highway"
+
+This Universal highway will go for a pretty long time, and then when the player reacher 45,000 points, the game will give the warning "U.Y. Scuti is approaching! Keep shooting!"
+
+(This time, U.Y. Scuti will need 150 hits to die, and it is actually impossible to beat it without the slow motion and mini-rocket power-ups, and each hit gives you 20 points.)
+When U.Y. Scuti is gone, the game gives a message in huge text, "Approaching the end of the observable universe"
+
+From here on, the game is normal, asteroid shooting, without any boss fights.
