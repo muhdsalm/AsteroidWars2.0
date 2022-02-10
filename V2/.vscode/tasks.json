@@ -6,7 +6,7 @@
         {
             "label": "Debug",
             "type": "shell",
-            "command": "g++ -c src/*.cpp -std=c++14 -m64 -g -Wall -I include && g++ *.o -o \"bin/debug/Asteroid Wars\" -lsfml-graphics -lsfml-window -lsfml-system && \"./bin/debug/Asteroid Wars\"",
+            "command": "g++ -c src/*.cpp -std=c++14 -m64 -g -Wall -I include && g++ *.o -o \"bin/debug/Asteroid Wars\" -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio && \"./bin/debug/Asteroid Wars\"",
             "problemMatcher": [],
             "group": {
                 "kind": "build",
