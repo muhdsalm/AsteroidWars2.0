@@ -1,0 +1,31 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Debug",
+            "type": "shell",
+            "command": "g++ -c src/*.cpp -std=c++14 -m64 -g -Wall -I include && g++ *.o -o \"bin/debug/Asteroid Wars\" -lsfml-graphics -lsfml-window -lsfml-system && \"./bin/debug/Asteroid Wars\"",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Release",
+            "type": "shell",
+            "command": "g++ -c src/*.cpp -std=c++14 -m64 -O3 -Wall -I include && g++ *.o -o \"bin/release/Asteroid Wars\" -s -lSDL2main -lSDL2 -lSDL2_image && \"./bin/release/Asteroid Wars\"",
+            "problemMatcher": [],
+            "group": "build"
+        },
+        {
+            "label": "Release_Windows",
+            "type": "shell",
+            "command": "x86_64-w64-mingw32-g++ -c src/*.cpp -std=c++14 -m64 -O3 -Wall -I include -Isdlinclude && x86_64-w64-mingw32-g++ *.o -o bin/windows/main.exe -Llib -Isdlinclude -lSDL2main -lSDL2 -lSDL2_image",
+            "problemMatcher": [],
+            "group": "build"
+        }
+    ]
+}
