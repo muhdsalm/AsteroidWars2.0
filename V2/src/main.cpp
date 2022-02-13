@@ -3,7 +3,9 @@
 #include<SFML/Audio.hpp>
 #include<stdlib.h>
 
-#include "RenderWindow.hpp"
+#include "Entity.hpp"
+#include "Player.hpp"
+#include "Bullet.hpp"
 
 enum gamestate{
     main_menu, help_menu_controls, help_menu_settings, help_menu_about, my_station, play
@@ -35,6 +37,7 @@ int main(){
     int windowh = 700;
     sf::RenderWindow window(sf::VideoMode(windoww, windowh), "Asteroid Wars Alpha 1.2", sf::Style::Close);
     window.setPosition(sf::Vector2i(0, 0));
+	window.setFramerateLimit(60);
     
     sf::Texture main_page_tex;
     sf::Sprite main_page;
@@ -61,12 +64,22 @@ int main(){
     my_station_tex.loadFromFile("res/UI/my station UI/my_station_UI_small.png");
     my_staion.setTexture(my_station_tex);
 
+	std::vector<Bullet> bullets = {};
+	int bullet_iterator = 0;
+
+	Player default_rocket;
+	default_rocket.SetTexture("res/Rockets/default rocket/default_rocket_small.png");
+
 
     gamestate gamestate = main_menu;
+
+	sf::Clock clock;
 
 	menu_music.play();
     while (window.isOpen())
     {
+		clock.restart();
+
         sf::Event event;
         while (window.pollEvent(event))
         {
@@ -169,7 +182,22 @@ int main(){
 						}
 					}
 				}
-			}            
+			}
+			if (gamestate == play)
+			{
+				
+				default_rocket.keypress(event);
+				if (event.key.code == sf::Keyboard::Space && event.type == sf::Event::KeyPressed)
+				{
+					bullets.push_back(Bullet());
+					bullets.at(bullets.size() - 1).Spawn(default_rocket);
+					
+				}
+				
+				
+
+			}
+			            
         }
         
         window.clear(sf::Color::Black);
@@ -201,11 +229,35 @@ int main(){
 					//return 1;
 				}
 			}
+
+			default_rocket.Update();
+
+			bullet_iterator = 0;
+			for ( Bullet& bullet : bullets )
+			{
+				bullet.SetTexture("res/icons/rocket_laser.png");
+				bullet.Update();
+				window.draw(bullet.GetSprite());
+
+				if (bullet.GetSprite().getPosition().y < 0 )
+				{
+					auto iterator = bullets.begin() + bullet_iterator;
+					bullets.erase(iterator);
+				}
+				bullet_iterator += 1;
+			}
+			bullet_iterator = 0;
+
+			window.draw(default_rocket.GetSprite());
+			
 		}
+
+		std::cout << bullets.size() << std::endl;
+
 
         window.display();
 
-        sf::sleep(sf::milliseconds(17));
+        sf::sleep(sf::milliseconds(17) - clock.getElapsedTime());
     }
     
 

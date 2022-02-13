@@ -1,0 +1,28 @@
+Boss fights (in order)
+
+1 - 5000 points, normal gameplay
+after 5000 points, jupiter arrives and the game gives a warning.
+After jupiter is defeated, the track "in-game.boss-fight.after-jupiter.music.mp3" will start playing until the next boss fight.
+
+when the player reacher 12,000 points, the next boss, Proxima Centauri, will arrive, and when it is defeated, the game should play the track "in-game.boss-fight.after-proxima-centauri.music.mp3"
+until the next boss fight.
+
+When the player reacher 20,000 points, the next boss, The unicorn blackhole will arrive, and when it is defeated, the game should play the track "in-game.boss-fight.after-unicorn-blackhole.music.mp3"
+until the next boss fight
+
+When the player reacher 45,000 points, the next boss, U.Y. Scuti will arrive, and when it is defeated, the game should play the track "in-game.boss-fight.after-UY-scuti.music.mp3" for the rest of the gameplay.
+---------------------------------------------------
+game.menu.music.1.mp3 or game.menu.music.2.mp3 will play randomly, with a 50% chance of each music playing when you open the game.
+-----------------------------------------------------
+use game.sound.click.wav for button clicking such as clicking the 'upgrades' sidebar or 'help' and 'start game' button, etc.
+-----------------------------------------------------
+use game.menu.shop.purchase.mp3 when something is purchased in the shop.
+-----------------------------------------------------
+use in-game.power-up.use.mp3 when a player uses a power up
+------------------------------------------------------
+use in-game.sound.laser.shoot.mp3 when the player shoots a laser
+-------------------------------------------------------
+use game.sound.rocket.explode.wav when the player's rocket has been hit by an asteroid or overheated.
+-------------------------------------------------------
+use in-game.music.before-jupiter-boss-fight.mp3 when the player starts the game, until jupiter arrives.
+-------------------------------------------------------
