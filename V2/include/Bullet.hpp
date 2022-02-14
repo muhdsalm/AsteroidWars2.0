@@ -19,8 +19,9 @@ class Bullet : public Entity
 
         void Spawn(Player player)
         {
+            sf::Vector2f pos(player.GetSprite().getPosition().x + 25.5, player.GetSprite().getPosition().y);
 
-            setSpriteLocation(player.GetSprite().getPosition());
+            setSpriteLocation(pos);
 
         }
 
