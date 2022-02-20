@@ -1,2 +1,0 @@
-Use red_cross on top of the price of any item in the shop when the player has purchased it. When a player purchases an item from the shop. the red_cross.png should
-cover the price tag of the item, indicating the fact that it has already been purchased.

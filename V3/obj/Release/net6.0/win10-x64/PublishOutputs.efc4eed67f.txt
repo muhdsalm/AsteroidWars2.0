@@ -1,0 +1,7 @@
+/home/hp/Documents/Github/AsteroidWars2.0/AsteroidWars2.0/V3/bin/Release/net6.0/win10-x64/publish/V3.pdb
+/home/hp/Documents/Github/AsteroidWars2.0/AsteroidWars2.0/V3/bin/Release/net6.0/win10-x64/publish/csfml-Audio.dll
+/home/hp/Documents/Github/AsteroidWars2.0/AsteroidWars2.0/V3/bin/Release/net6.0/win10-x64/publish/csfml-Graphics.dll
+/home/hp/Documents/Github/AsteroidWars2.0/AsteroidWars2.0/V3/bin/Release/net6.0/win10-x64/publish/csfml-System.dll
+/home/hp/Documents/Github/AsteroidWars2.0/AsteroidWars2.0/V3/bin/Release/net6.0/win10-x64/publish/csfml-Window.dll
+/home/hp/Documents/Github/AsteroidWars2.0/AsteroidWars2.0/V3/bin/Release/net6.0/win10-x64/publish/openal32.dll
+/home/hp/Documents/Github/AsteroidWars2.0/AsteroidWars2.0/V3/bin/Release/net6.0/win10-x64/publish/V3.exe
