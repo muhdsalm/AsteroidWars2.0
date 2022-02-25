@@ -6,7 +6,7 @@
         {
             "label": "debug",
             "type": "shell",
-            "command": "dotnet run",
+            "command": "dotnet run -R ubuntu.20.04-x64",
             "problemMatcher": [],
             "group": {
                 "kind": "build",
@@ -23,7 +23,16 @@
         {
             "label": "publish",
             "type": "shell",
-            "command": "dotnet publish -self-contained -p:PublishSingleFile=True -p:PublishTrimmed=True -p:TrimMode=CopyUsed -p:PublishReadyToRun=False"
+            "command": "dotnet publish V3.csproj -self-contained -p:PublishSingleFile=True -p:PublishTrimmed=True -p:TrimMode=CopyUsed -p:PublishReadyToRun=False -R:ubuntu.20.04-x64",
+            "problemMatcher": [],
+            "group": "build"
+        },
+        {
+            "label": "publish_win",
+            "type": "shell",
+            "command": "dotnet publish V3.csproj --self-contained -p:PublishSingleFile=True -p:PublishReadyToRun=False -r win-x64 -c Release",
+            "problemMatcher": [],
+            "group": "build"
         }
     ]
 }

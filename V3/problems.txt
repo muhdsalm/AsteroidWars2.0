@@ -1,0 +1,5 @@
+1. Score font should be a bit bigger. ###
+2. Game over screen only shows the score, not the other stuff. ///
+3. The pause menu doesn't work.
+4. Make the rocket lasers a bit more bigger, like 10% bigger
+5. WASD keys don't work

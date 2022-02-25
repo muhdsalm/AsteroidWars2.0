@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Nc6H6+cc5jHwZqDrHIuQAeLIQ8BYf3gdJ3nn2GrFZFA2ND7Hx9lxo5Plp2BPzC9nPCtx2eqjQLiorf4jwjz1gw==",
+  "dgSpecHash": "MvjsAg3nq0Ok3J53dQgA4NrArAHN/qiQEo16+LPltfkpMRbSQUk4bfhQjmsYewfu3436YLw1h6qOr6dwBabx9g==",
   "success": true,
   "projectFilePath": "/home/hp/Documents/Github/AsteroidWars2.0/AsteroidWars2.0/V3/V3.csproj",
   "expectedPackageFiles": [
@@ -13,7 +13,6 @@
     "/home/hp/.nuget/packages/microsoft.netcore.app.runtime.linux-x64/6.0.0/microsoft.netcore.app.runtime.linux-x64.6.0.0.nupkg.sha512",
     "/home/hp/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.0/microsoft.aspnetcore.app.ref.6.0.0.nupkg.sha512",
     "/home/hp/.nuget/packages/microsoft.aspnetcore.app.runtime.linux-x64/6.0.0/microsoft.aspnetcore.app.runtime.linux-x64.6.0.0.nupkg.sha512",
-    "/home/hp/.nuget/packages/microsoft.netcore.app.crossgen2.linux-x64/6.0.0/microsoft.netcore.app.crossgen2.linux-x64.6.0.0.nupkg.sha512",
     "/home/hp/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.0/microsoft.netcore.app.host.linux-x64.6.0.0.nupkg.sha512"
   ],
   "logs": []

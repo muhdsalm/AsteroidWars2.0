@@ -18,19 +18,19 @@ class Player : Entity{
     public void Keypress(KeyEventArgs p_event)
     {
 
-        if (p_event.Code == Keyboard.Key.Left)
+        if (p_event.Code == Keyboard.Key.Left || p_event.Code == Keyboard.Key.A)
         {
             x = -10;
         }
-        if (p_event.Code == Keyboard.Key.Right)
+        if (p_event.Code == Keyboard.Key.Right || p_event.Code == Keyboard.Key.D)
         {
             x = 10;
         }
-        if (p_event.Code == Keyboard.Key.Up)
+        if (p_event.Code == Keyboard.Key.Up || p_event.Code == Keyboard.Key.W)
         {
             y = -10;
         }
-        if (p_event.Code == Keyboard.Key.Down)
+        if (p_event.Code == Keyboard.Key.Down || p_event.Code == Keyboard.Key.S)
         {
             y = 10;
         }
@@ -44,14 +44,14 @@ class Player : Entity{
 
 
         moveSprite(new Vector2f(x, y));
-            if (!(Keyboard.IsKeyPressed(Keyboard.Key.Left)))
+            if (!(Keyboard.IsKeyPressed(Keyboard.Key.Left) || Keyboard.IsKeyPressed(Keyboard.Key.A)))
         {
             if (x < 0)
             {
                 x = 0;
             }
         }
-        if (!(Keyboard.IsKeyPressed(Keyboard.Key.Right)))
+        if (!(Keyboard.IsKeyPressed(Keyboard.Key.Right) || Keyboard.IsKeyPressed(Keyboard.Key.D)))
         {
             if (x > 0)
             {
@@ -59,7 +59,7 @@ class Player : Entity{
             }
             
         }
-        if (!(Keyboard.IsKeyPressed(Keyboard.Key.Up)))
+        if (!(Keyboard.IsKeyPressed(Keyboard.Key.Up) || Keyboard.IsKeyPressed(Keyboard.Key.W)))
         {
             if (y < 0)
             {
@@ -67,7 +67,7 @@ class Player : Entity{
             }
             
         }
-        if (!(Keyboard.IsKeyPressed(Keyboard.Key.Down)))
+        if (!(Keyboard.IsKeyPressed(Keyboard.Key.Down) || Keyboard.IsKeyPressed(Keyboard.Key.S)))
         {
             if (y > 0)
             {
