@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/in-game.sound.laser.shoot.mp3-0ac3a6025502ac2cc52a07869f6f17a0.mp3str"
+
+[deps]
+
+source_file="res://res/sound/sound effects/in-game.sound.laser.shoot.mp3"
+dest_files=[ "res://.import/in-game.sound.laser.shoot.mp3-0ac3a6025502ac2cc52a07869f6f17a0.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

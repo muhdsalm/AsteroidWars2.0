@@ -1,0 +1,84 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://res/UI/pause_menu_page_small.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Pause.gd" type="Script" id=2]
+[ext_resource path="res://res/fonts/fixedsys.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Scenes/Help_Settings.tscn" type="PackedScene" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="DynamicFont" id=6]
+size = 25
+font_data = ExtResource( 3 )
+
+[node name="Pause" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="PauseMenuPageSmall" type="Sprite" parent="."]
+z_index = 1
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Resume" type="Button" parent="."]
+margin_left = 228.0
+margin_top = 239.0
+margin_right = 457.0
+margin_bottom = 300.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+
+[node name="Settings" type="Button" parent="."]
+margin_left = 196.0
+margin_top = 389.0
+margin_right = 501.0
+margin_bottom = 465.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+
+[node name="LeaveGame" type="Button" parent="."]
+margin_left = 152.0
+margin_top = 558.0
+margin_right = 539.0
+margin_bottom = 642.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+
+[node name="Node2D" type="Node2D" parent="."]
+visible = false
+z_index = 2
+
+[node name="Controls" parent="Node2D" instance=ExtResource( 4 )]
+
+[node name="ReturnLabel" type="Label" parent="Node2D"]
+margin_left = -2.0
+margin_top = 589.0
+margin_right = 874.0
+margin_bottom = 691.0
+custom_fonts/font = SubResource( 6 )
+text = "If you want want go back to the pause screen, press 'P'.
+
+If you change the menu, your progress will be lost"
+
+[connection signal="button_down" from="Resume" to="." method="_on_Resume_button_down"]
+[connection signal="button_down" from="Settings" to="." method="_on_Settings_button_down"]
+[connection signal="button_down" from="LeaveGame" to="." method="_on_LeaveGame_button_down"]

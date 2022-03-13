@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/in-game.boss-fight.after-unicorn-blackhole.music.mp3-664f5e1d5e15367d9d9b364a031aa8e5.mp3str"
+
+[deps]
+
+source_file="res://res/sound/AFTER boss fight music/in-game.boss-fight.after-unicorn-blackhole.music.mp3"
+dest_files=[ "res://.import/in-game.boss-fight.after-unicorn-blackhole.music.mp3-664f5e1d5e15367d9d9b364a031aa8e5.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

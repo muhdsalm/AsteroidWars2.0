@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/in-game.power-up.use.mp3-62871ef1d2b7eba294e661f0deb72fa0.mp3str"
+
+[deps]
+
+source_file="res://res/sound/sound effects/in-game.power-up.use.mp3"
+dest_files=[ "res://.import/in-game.power-up.use.mp3-62871ef1d2b7eba294e661f0deb72fa0.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

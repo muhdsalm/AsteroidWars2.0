@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/in-game.music.before-jupiter-boss-fight.ogg-52de0521a4cd57416a0ddb4d02f79490.oggstr"
+
+[deps]
+
+source_file="res://res/sound/in-game.music.before-jupiter-boss-fight.ogg"
+dest_files=[ "res://.import/in-game.music.before-jupiter-boss-fight.ogg-52de0521a4cd57416a0ddb4d02f79490.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

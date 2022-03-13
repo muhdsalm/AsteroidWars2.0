@@ -1,0 +1,85 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://res/UI/Help UI/controls_page_small.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Help_Controls.gd" type="Script" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[node name="Controls" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="ControlsPageSmall" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="ControlsButton" type="Button" parent="."]
+margin_right = 127.0
+margin_bottom = 41.0
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/disabled = SubResource( 5 )
+custom_styles/normal = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SettingsButton" type="Button" parent="."]
+margin_left = 1.0
+margin_top = 41.0
+margin_right = 128.0
+margin_bottom = 95.0
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/disabled = SubResource( 5 )
+custom_styles/normal = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InfoButton" type="Button" parent="."]
+margin_left = -1.0
+margin_top = 96.0
+margin_right = 126.0
+margin_bottom = 145.0
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/disabled = SubResource( 5 )
+custom_styles/normal = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackToMainPageButton" type="Button" parent="."]
+margin_left = 622.0
+margin_top = 655.0
+margin_right = 719.0
+margin_bottom = 698.0
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/disabled = SubResource( 5 )
+custom_styles/normal = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="button_down" from="ControlsButton" to="." method="_on_ControlsButton_button_down"]
+[connection signal="button_down" from="SettingsButton" to="." method="_on_SettingsButton_pressed"]
+[connection signal="pressed" from="SettingsButton" to="." method="_on_SettingsButton_pressed"]
+[connection signal="button_down" from="InfoButton" to="." method="_on_InfoButton_pressed"]
+[connection signal="pressed" from="InfoButton" to="." method="_on_InfoButton_pressed"]
+[connection signal="button_down" from="BackToMainPageButton" to="." method="_on_BackToMainPageButton_pressed"]
+[connection signal="pressed" from="BackToMainPageButton" to="." method="_on_BackToMainPageButton_pressed"]

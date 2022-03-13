@@ -64,7 +64,7 @@ namespace AsteroidWars
         Random random = new Random();
 
         bool musicIsOn = true;
-        bool soundIsOn = false;
+        bool soundIsOn = true;
 
         SFML.Audio.Music menu_music = new Music("res/sound/menu music/game.menu.music.2.ogg");
         menu_music.Loop = true;
@@ -135,43 +135,54 @@ namespace AsteroidWars
         
         RectangleShape soundSetRect = new RectangleShape(new Vector2f(120, 30));
         Text soundSetText = new Text(soundIsOn.ToString(), font);
+        Text soundLabel = new Text("Sound: ", font);
+
+        soundLabel.Position = new Vector2f(260, 106);
 
         if(soundIsOn){
-        soundSetRect.Position = new Vector2f(237, 111);
-        soundSetRect.OutlineColor = Color.Green;
-        soundSetRect.OutlineThickness = 1;
-        soundSetRect.FillColor = Color.Transparent;
+            soundSetText = new Text("ON".ToString(), font);
+            soundSetRect.Position = new Vector2f(360, 111);
+            soundSetRect.OutlineColor = Color.Green;
+            soundSetRect.OutlineThickness = 1;
+            soundSetRect.FillColor = Color.Transparent;
 
-        soundSetText.Position = new Vector2f(265, 106);
-        soundSetText.FillColor = Color.Green;
+            soundSetText.Position = new Vector2f(360, 106);
+            soundSetText.FillColor = Color.Green;
         }else{
-            soundSetRect.Position = new Vector2f(237, 111);
+            soundSetText = new Text("OFF".ToString(), font);
+            soundSetRect.Position = new Vector2f(360, 111);
             soundSetRect.OutlineColor = Color.Red;
             soundSetRect.OutlineThickness = 1;
             soundSetRect.FillColor = Color.Transparent;
 
-            soundSetText.Position = new Vector2f(260, 106);
+            soundSetText.Position = new Vector2f(360, 106);
             soundSetText.FillColor = Color.Red;
         }
 
+
         RectangleShape musicSetRect = new RectangleShape(new Vector2f(120, 30));
-        Text musicSetText = new Text(soundIsOn.ToString(), font);
+        Text musicSetText = new Text(musicIsOn.ToString(), font);
+        Text musicLabel = new Text("Music: ", font);
+
+        musicLabel.Position = new Vector2f(265, 166);
 
         if(musicIsOn){
-        musicSetRect.Position = new Vector2f(237, 171);
-        musicSetRect.OutlineColor = Color.Green;
-        musicSetRect.OutlineThickness = 1;
-        musicSetRect.FillColor = Color.Transparent;
+            musicSetText = new Text("ON".ToString(), font);
+            musicSetRect.Position = new Vector2f(360, 171);
+            musicSetRect.OutlineColor = Color.Green;
+            musicSetRect.OutlineThickness = 1;
+            musicSetRect.FillColor = Color.Transparent;
 
-        musicSetText.Position = new Vector2f(265, 166);
-        musicSetText.FillColor = Color.Green;
+            musicSetText.Position = new Vector2f(360, 166);
+            musicSetText.FillColor = Color.Green;
         }else{
-            musicSetRect.Position = new Vector2f(237, 171);
+            musicSetText = new Text("OFF".ToString(), font);
+            musicSetRect.Position = new Vector2f(360, 171);
             musicSetRect.OutlineColor = Color.Red;
             musicSetRect.OutlineThickness = 1;
             musicSetRect.FillColor = Color.Transparent;
 
-            musicSetText.Position = new Vector2f(260, 166);
+            musicSetText.Position = new Vector2f(360, 166);
             musicSetText.FillColor = Color.Red;
         }
 
@@ -224,7 +235,7 @@ namespace AsteroidWars
                             points = 0;
                             currentAsteroidPointCounter = 1;
 
-                            default_rocket.setSpriteLocation(new Vector2f(260, 350));
+                            default_rocket.setSpriteLocation(new Vector2f(360, 350));
 
                             gamestate = gamestate.play;
                             menu_music.Stop();
@@ -320,6 +331,84 @@ namespace AsteroidWars
                     
                 }
 
+                if (gamestate == gamestate.help_menu_settings)
+                {
+                    if (Mouse.GetPosition(window).X > 360 && Mouse.GetPosition(window).X < 357)
+                    {
+                        if (Mouse.GetPosition(window).Y > 171 && Mouse.GetPosition(window).Y < 201)
+                        {
+                            
+                            if (soundIsOn)
+                            {
+                                click_sound.Play();
+                            }
+
+                            musicIsOn = !musicIsOn;
+
+                            if (!musicIsOn)
+                            {
+                                menu_music.Stop();
+                                in_game_music_before_jupiter_dies.Stop();
+                            }else{
+                                menu_music.Play();
+                            }
+
+
+                            if(musicIsOn){
+                                musicSetText = new Text("ON".ToString(), font);
+                                musicSetRect.Position = new Vector2f(360, 171);
+                                musicSetRect.OutlineColor = Color.Green;
+                                musicSetRect.OutlineThickness = 1;
+                                musicSetRect.FillColor = Color.Transparent;
+
+                                musicSetText.Position = new Vector2f(265, 166);
+                                musicSetText.FillColor = Color.Green;
+                            }else{
+                                musicSetText = new Text("OFF".ToString(), font);
+                                musicSetRect.Position = new Vector2f(360, 171);
+                                musicSetRect.OutlineColor = Color.Red;
+                                musicSetRect.OutlineThickness = 1;
+                                musicSetRect.FillColor = Color.Transparent;
+
+                                musicSetText.Position = new Vector2f(360, 166);
+                                musicSetText.FillColor = Color.Red;
+                            }
+                        }
+
+                        if (Mouse.GetPosition(window).Y > 111 && Mouse.GetPosition(window).Y < 141)
+                        {
+
+                            if (soundIsOn)
+                            {
+                                click_sound.Play();
+                            }
+
+                            soundIsOn = !soundIsOn;
+                            if(soundIsOn){
+                                soundSetText = new Text("ON".ToString(), font);
+                                soundSetRect.Position = new Vector2f(360, 111);
+                                soundSetRect.OutlineColor = Color.Green;
+                                soundSetRect.OutlineThickness = 1;
+                                soundSetRect.FillColor = Color.Transparent;
+
+                                soundSetText.Position = new Vector2f(265, 106);
+                                soundSetText.FillColor = Color.Green;
+                            }else{
+                                soundSetText = new Text("OFF".ToString(), font);
+                                soundSetRect.Position = new Vector2f(360, 111);
+                                soundSetRect.OutlineColor = Color.Red;
+                                soundSetRect.OutlineThickness = 1;
+                                soundSetRect.FillColor = Color.Transparent;
+
+                                soundSetText.Position = new Vector2f(360, 106);
+                                soundSetText.FillColor = Color.Red;
+                            }
+                        }
+                    }
+
+
+                }
+
                 else if (gamestate == gamestate.gameover)
                 {
                     if (Mouse.GetPosition(window).X > 121 && Mouse.GetPosition(window).X < 398)
@@ -360,7 +449,7 @@ namespace AsteroidWars
                             points = 0;
                             currentAsteroidPointCounter = 1;
 
-                            default_rocket.setSpriteLocation(new Vector2f(260, 350));
+                            default_rocket.setSpriteLocation(new Vector2f(360, 350));
 
                             gamestate = gamestate.play;
                             menu_music.Stop();
@@ -498,7 +587,7 @@ namespace AsteroidWars
                             points = 0;
                             currentAsteroidPointCounter = 1;
 
-                            default_rocket.setSpriteLocation(new Vector2f(260, 350));
+                            default_rocket.setSpriteLocation(new Vector2f(360, 350));
 
                             gamestate = gamestate.play;
                             menu_music.Stop();
@@ -564,8 +653,11 @@ namespace AsteroidWars
                     window.Draw(stars[i]);
                 }
 
+                window.Draw(soundLabel);
                 window.Draw(soundSetRect);
                 window.Draw(soundSetText);
+
+                window.Draw(musicLabel);
                 window.Draw(musicSetRect);
                 window.Draw(musicSetText);
             }
