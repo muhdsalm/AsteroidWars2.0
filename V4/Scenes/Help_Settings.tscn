@@ -106,6 +106,21 @@ margin_bottom = 116.0
 custom_fonts/font = SubResource( 6 )
 text = "0"
 
+[node name="SoundIsOn" type="CheckButton" parent="VolumeSettings"]
+margin_left = 139.0
+margin_top = 205.0
+margin_right = 215.0
+margin_bottom = 245.0
+pressed = true
+
+[node name="Sound" type="Label" parent="VolumeSettings"]
+margin_left = 155.0
+margin_top = 160.0
+margin_right = 251.0
+margin_bottom = 192.0
+custom_fonts/font = SubResource( 6 )
+text = "Sound:"
+
 [connection signal="button_down" from="ControlsButton" to="." method="_on_ControlsButton_button_down"]
 [connection signal="button_down" from="SettingsButton" to="." method="_on_SettingsButton_pressed"]
 [connection signal="pressed" from="SettingsButton" to="." method="_on_SettingsButton_pressed"]

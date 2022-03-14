@@ -31,6 +31,7 @@ window/size/resizable=false
 
 physics=false
 "bg color"=false
+color=false
 
 [input]
 
@@ -81,5 +82,5 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
-environment/default_clear_color=Color( 0.623529, 0.129412, 0.129412, 1 )
+environment/default_clear_color=Color( 0, 0, 0, 1 )
 environment/default_environment="res://default_env.tres"

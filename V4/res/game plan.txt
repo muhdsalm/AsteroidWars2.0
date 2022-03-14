@@ -114,14 +114,14 @@ Make an explosion when the rocket overheats.
 Add sounds.
 
 When the player starts the game, a huge text will appear in the player's screen saying "Approaching asteroid belt" in red colour, and it blinks 3 times.
-When the player reaches 5000 points, they have passed through the asteroid belt.
+When the player reaches 2000 points, they have passed through the asteroid belt.
 
 Then the game gives a warning "Jupiter is approaching, keep shooting!"
 
 Then a giant Jupiter appears, and there will be a health bar at the bottom, where you have to shoot Jupiter until it, well, dies. (Jupiter requires 30 hits to die, and each hit gives the player 15 points)
 When Jupiter is gone, the game will say, in huge text, "Approaching Kuiper belt"
 
-When the player has reached more than 12,000 points, they have passed the Kuiper belt.
+When the player has reached more than 7,000 points, they have passed the Kuiper belt.
 Then the game gives a warning "Proxima Centauri is approaching, keep shooting!"
 
 (This time, Proxima Centauri will need 50 hits to die, and each hit gives the player 15 points.)
@@ -131,7 +131,7 @@ When Proxima Centauri is dead, the game will give a message, again, in huge text
 (From this section in the game, 'Frozen meteorites' will have a 15% chance of spawning, and requires 2 hits to break it, and each hit gives you 5 points.)
 
 
-When the player reacher 20,000 points, they have passed though the Oort Cloud. 
+When the player reacher 15,000 points, they have passed though the Oort Cloud. 
 
 Then the game gives a warning "The Unicorn Blackhole is approaching, keep shooting!"
 
@@ -139,9 +139,9 @@ Then the game gives a warning "The Unicorn Blackhole is approaching, keep shooti
 
 Then, in huge text, the game says "Approaching Universal highway"
 
-This Universal highway will go for a pretty long time, and then when the player reacher 45,000 points, the game will give the warning "U.Y. Scuti is approaching! Keep shooting!"
+This Universal highway will go for a pretty long time, and then when the player reacher 30,000 points, the game will give the warning "U.Y. Scuti is approaching! Keep shooting!"
 
-(This time, U.Y. Scuti will need 150 hits to die, and it is actually impossible to beat it without the slow motion and mini-rocket power-ups, and each hit gives you 20 points.)
+(This time, U.Y. Scuti will need 150 hits to die, and each hit gives you 20 points.)
 When U.Y. Scuti is gone, the game gives a message in huge text, "Approaching the end of the observable universe"
 
 From here on, the game is normal, asteroid shooting, without any boss fights.

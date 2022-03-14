@@ -1,0 +1,1 @@
+When opening the game, this video should play first, then the user can start playing.

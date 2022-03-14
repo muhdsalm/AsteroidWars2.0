@@ -17,4 +17,5 @@ func _ready():
 
 
 func _on_Button_button_down():
+	MusicAutoLoad.Click()
 	get_tree().change_scene("res://Scenes/Main Menu.tscn")

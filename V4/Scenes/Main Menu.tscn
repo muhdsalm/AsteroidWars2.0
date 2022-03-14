@@ -43,9 +43,6 @@ custom_styles/pressed = SubResource( 2 )
 custom_styles/focus = SubResource( 3 )
 custom_styles/disabled = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="QuitButton" type="Button" parent="."]
 margin_left = 322.0
@@ -88,8 +85,6 @@ custom_styles/normal = SubResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
 [connection signal="button_down" from="PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="PlayButton" to="." method="_on_PlayButton_pressed"]

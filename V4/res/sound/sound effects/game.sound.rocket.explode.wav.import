@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/game.sound.rocket.explode.wav-ca23051fcbf397c75266cc9cb76798ec.sample"
+
+[deps]
+
+source_file="res://res/sound/sound effects/game.sound.rocket.explode.wav"
+dest_files=[ "res://.import/game.sound.rocket.explode.wav-ca23051fcbf397c75266cc9cb76798ec.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

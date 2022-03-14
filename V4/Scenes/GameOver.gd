@@ -12,6 +12,9 @@ var tempCurrentAsteroidsDefeated = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
+	if MusicAutoLoad.sound:
+		$CrashSound.play()
+	
 	if PointSystem.points > PointSystem.bestScore:
 		PointSystem.bestScore = PointSystem.points
 	
@@ -58,6 +61,8 @@ func _process(delta):
 
 
 func _on_Button_button_down():
+	
+	MusicAutoLoad.Click()
 	
 	PointSystem.points = 0
 	PointSystem.asteroidsDefeated = 0
