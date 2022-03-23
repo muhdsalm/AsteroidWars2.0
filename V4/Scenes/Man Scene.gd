@@ -23,11 +23,15 @@ var PauseMenu = load("res://Scenes/Pause.tscn")
 
 var spam = 15
 
-var MusicIsRunning = false
+var Jupiter = load("res://Assets/Jupiter.tscn")
+var bosshasspawned = false
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	MusicAutoLoad.StopMusic()
+	MusicAutoLoad.PlayMusic()
+	$Node2D/Score.add_color_override("font_color", Color(1,1,0,1))
 	for i in range(10):
 		backgrounds.append([])
 		for j in range(10):
@@ -36,12 +40,7 @@ func _ready():
 			add_child(backgrounds[i][j])
 			backgrounds[i][j].position = Vector2(i * 80, (j - 1) * 80)
 	
-	MusicAutoLoad.StopMusic()
-	
-	if !MusicIsRunning:
-		$JukeBox.stream = in_game_music_before_jupiter_dies
-		$JukeBox.play()
-		MusicIsRunning = true
+	MusicAutoLoad.StartInGameMusic()
 	rng.randomize()
 	randomPosition = rng.randi_range(0, 700)
 	
@@ -49,23 +48,29 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	
-	$JukeBox.volume_db = MusicAutoLoad.music_volume
+	if PointSystem.points > 1000 and !bosshasspawned:
+		PointSystem.bossIsOnTheScene = true
+		add_child(Jupiter.instance())
+		bosshasspawned = true
 		
-	if OS.get_ticks_msec() - then > delay:
 		
-		$AsteroidSpawner.position.x = randomPosition
 		
-		Asteroids.append(Asteroid)
-		Asteroids[Asteroids.size() - 1] = Asteroids[Asteroids.size() - 1].instance()
-		add_child(Asteroids[Asteroids.size() - 1])
-		Asteroids[Asteroids.size() - 1].position.x  = $AsteroidSpawner.position.x
-		Asteroids[Asteroids.size() - 1].position.y = $AsteroidSpawner.position.y
+	if !PointSystem.bossIsOnTheScene:
+		if OS.get_ticks_msec() - then > delay:
+			
+			$AsteroidSpawner.position.x = randomPosition
+			
+			Asteroids.append(Asteroid)
+			Asteroids[Asteroids.size() - 1] = Asteroids[Asteroids.size() - 1].instance()
+			add_child(Asteroids[Asteroids.size() - 1])
+			Asteroids[Asteroids.size() - 1].position.x  = $AsteroidSpawner.position.x
+			Asteroids[Asteroids.size() - 1].position.y = $AsteroidSpawner.position.y
+			
+			delay = rng.randi_range(1, PointSystem.spawnDelay)
+			then = OS.get_ticks_msec()
+			randomPosition = rng.randi_range(0, 700)
 		
-		delay = rng.randi_range(1, PointSystem.spawnDelay)
-		then = OS.get_ticks_msec()
-		randomPosition = rng.randi_range(0, 700)
-		
-	$Score.text = String(PointSystem.points)
+	$Node2D/Score.text = String(PointSystem.points)
 	
 	if OS.get_unix_time()-ScorePrevTime >= 1:
 		PointSystem.points+=1
@@ -100,6 +105,8 @@ func _input(event):
 		
 	if event.is_action_pressed("Pause"):
 		
+		MusicAutoLoad.StopMusic()
 		get_tree().paused = true
 		add_child(PauseMenu.instance())
+		
 		

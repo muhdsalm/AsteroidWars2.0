@@ -7,6 +7,7 @@ extends Control
 var tempCurrentScore = 0
 var tempCurrentBestScore = 0
 var tempCurrentAsteroidsDefeated = 0
+var pointsleft = 0
 
 
 # Called when the node enters the scene tree for the first time.
@@ -15,6 +16,8 @@ func _ready():
 	if MusicAutoLoad.sound:
 		$CrashSound.play()
 	
+	MusicAutoLoad.StopMusic()
+	
 	if PointSystem.points > PointSystem.bestScore:
 		PointSystem.bestScore = PointSystem.points
 	
@@ -22,6 +25,7 @@ func _ready():
 	print(PointSystem.points)
 	print(PointSystem.bestScore)
 	print(PointSystem.asteroidsDefeated)
+	pointsleft = PointSystem.points
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -30,34 +34,57 @@ func _process(delta):
 	$BestScore.text = String(tempCurrentBestScore)
 	$AsteroidsDefeated.text = String(tempCurrentAsteroidsDefeated)
 	
-	if PointSystem.points < 100:
+	if pointsleft < 100:
+		pointsleft-=1
 		if tempCurrentScore < PointSystem.points:
 			tempCurrentScore += 1
 		elif tempCurrentBestScore < PointSystem.bestScore:
 			tempCurrentBestScore += 1
 		elif tempCurrentAsteroidsDefeated < PointSystem.asteroidsDefeated:
 			tempCurrentAsteroidsDefeated += 1
-	elif PointSystem.points < 200:
+	elif pointsleft < 200:
+		pointsleft-=2
 		if tempCurrentScore < PointSystem.points:
 			tempCurrentScore += 2
 		elif tempCurrentBestScore < PointSystem.bestScore:
 			tempCurrentBestScore += 2
 		elif tempCurrentAsteroidsDefeated < PointSystem.asteroidsDefeated:
-			tempCurrentAsteroidsDefeated += 2
-	if PointSystem.points < 500:
+			tempCurrentAsteroidsDefeated += 1
+	if pointsleft < 500:
+		pointsleft-=5
 		if tempCurrentScore < PointSystem.points:
 			tempCurrentScore += 5
 		elif tempCurrentBestScore < PointSystem.bestScore:
 			tempCurrentBestScore += 5
 		elif tempCurrentAsteroidsDefeated < PointSystem.asteroidsDefeated:
-			tempCurrentAsteroidsDefeated += 5
-	else:
+			tempCurrentAsteroidsDefeated += 1
+	elif pointsleft < 1000:
+		pointsleft-=10
 		if tempCurrentScore < PointSystem.points:
 			tempCurrentScore += 10
 		elif tempCurrentBestScore < PointSystem.bestScore:
 			tempCurrentBestScore += 10
 		elif tempCurrentAsteroidsDefeated < PointSystem.asteroidsDefeated:
-			tempCurrentAsteroidsDefeated += 10
+			tempCurrentAsteroidsDefeated += 1
+	elif pointsleft < 5000:
+		pointsleft-=100
+		if tempCurrentScore < PointSystem.points:
+			tempCurrentScore += 100
+		elif tempCurrentBestScore < PointSystem.bestScore:
+			tempCurrentBestScore += 100
+		elif tempCurrentAsteroidsDefeated < PointSystem.asteroidsDefeated:
+			tempCurrentAsteroidsDefeated += 1
+	else:
+		pointsleft-=1000
+		if tempCurrentScore < PointSystem.points:
+			tempCurrentScore += 1000
+		elif tempCurrentBestScore < PointSystem.bestScore:
+			tempCurrentBestScore += 1000
+		elif tempCurrentAsteroidsDefeated < PointSystem.asteroidsDefeated:
+			tempCurrentAsteroidsDefeated += 1
+
+	if pointsleft <= 0:
+		pointsleft = PointSystem.bestScore
 
 
 func _on_Button_button_down():
@@ -67,6 +94,7 @@ func _on_Button_button_down():
 	PointSystem.points = 0
 	PointSystem.asteroidsDefeated = 0
 	PointSystem.spawnDelay = 1000
+	PointSystem.resetSpeed()
 	get_tree().change_scene("res://Scenes/Man Scene.tscn")
 	
 func _input(event):
@@ -75,4 +103,5 @@ func _input(event):
 		PointSystem.points = 0
 		PointSystem.asteroidsDefeated = 0
 		PointSystem.spawnDelay = 1000
+		PointSystem.resetSpeed()
 		get_tree().change_scene("res://Scenes/Man Scene.tscn")

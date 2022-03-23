@@ -9,6 +9,9 @@ var totalPoints = 0
 var spawnDelay = 1000
 var bestScore = 0
 var asteroidsDefeated = 0
+var bossIsOnTheScene = false
+var asteroidSpeed = 300
+var asteroidIncrementer = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,5 +19,13 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	if (points - 300) / asteroidIncrementer >= 100:
+		asteroidSpeed += 100
+		asteroidIncrementer += 1
+		#print(asteroidIncrementer)
+	print(asteroidSpeed)
+func resetSpeed():
+	asteroidSpeed = 300
+	asteroidIncrementer = 1
+	print("reset")

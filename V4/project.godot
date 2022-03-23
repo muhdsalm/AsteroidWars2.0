@@ -12,14 +12,17 @@ config_version=4
 
 config/name="Asteroid Wars"
 run/main_scene="res://Scenes/Main Menu.tscn"
-boot_splash/image="res://res/Colors/Black.png"
+config/use_custom_user_dir=true
+boot_splash/image="res://res/Intro for opening game/Intro.png"
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
-config/icon="res://icon.png"
+config/icon="res://res/icon.png"
+config/windows_native_icon="res://res/icon.ico"
 
 [autoload]
 
 MusicAutoLoad="*res://AutoLoads/MusicAutoLoad.tscn"
 PointSystem="*res://AutoLoads/PointSystem.tscn"
+PerformanceMonitor="*res://AutoLoads/PerformanceMonitor.tscn"
 
 [display]
 

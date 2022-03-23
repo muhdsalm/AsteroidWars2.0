@@ -11,6 +11,7 @@ func _ready():
 	
 	if !(MusicAutoLoad.menu_music_playing):
 		MusicAutoLoad.StartMusic()
+	$HighScoreLevel.text = String(PointSystem.bestScore)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

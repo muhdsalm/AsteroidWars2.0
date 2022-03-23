@@ -5,12 +5,9 @@ extends KinematicBody2D
 # var a = 2
 # var b = "text"
 var collision
-var speed = 300
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
-	speed += int(PointSystem.points / 100) * 100
 	PointSystem.spawnDelay = 1000 - int(PointSystem.points / 100)
 
 
@@ -19,7 +16,7 @@ func _ready():
 #	pass
 
 func _physics_process(delta):
-	move_and_slide(Vector2.DOWN * speed)
+	move_and_slide(Vector2.DOWN * PointSystem.asteroidSpeed)
 		
 	
 	if position.y > 700:

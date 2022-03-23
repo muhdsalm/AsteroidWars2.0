@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://res/UI/Help UI/settings_page_small.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Help_Controls.gd" type="Script" id=2]
@@ -16,6 +16,10 @@
 [sub_resource type="StyleBoxEmpty" id=1]
 
 [sub_resource type="DynamicFont" id=6]
+size = 32
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=7]
 size = 32
 font_data = ExtResource( 3 )
 
@@ -120,6 +124,20 @@ margin_right = 251.0
 margin_bottom = 192.0
 custom_fonts/font = SubResource( 6 )
 text = "Sound:"
+
+[node name="ShowFPS" type="CheckButton" parent="VolumeSettings"]
+margin_left = 141.0
+margin_top = 340.0
+margin_right = 217.0
+margin_bottom = 380.0
+
+[node name="ShowFPSLabel" type="Label" parent="VolumeSettings"]
+margin_left = 153.0
+margin_top = 296.0
+margin_right = 297.0
+margin_bottom = 328.0
+custom_fonts/font = SubResource( 7 )
+text = "Show FPS:"
 
 [connection signal="button_down" from="ControlsButton" to="." method="_on_ControlsButton_button_down"]
 [connection signal="button_down" from="SettingsButton" to="." method="_on_SettingsButton_pressed"]

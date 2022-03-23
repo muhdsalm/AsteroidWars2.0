@@ -57,4 +57,5 @@ func _input(event):
 
 func _on_Area2D_body_entered(body):
 	
+	MusicAutoLoad.StopMusic()
 	get_tree().change_scene("res://Scenes/GameOver.tscn")
