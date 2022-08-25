@@ -49,6 +49,9 @@ func StartInGameMusic():
 		$JukeBox.stream = in_game_music_before_jupiter_dies
 		$JukeBox.play()
 		MusicIsRunning = true
+func StopInGameMusic():
+	MusicIsRunning = false
+	$JukeBox.stop()
 func StartAfterJupiterMusic():
 	$JukeBox.stop()
 	$JukeBox.stream = load("res://res/sound/AFTER boss fight music/in-game.boss-fight.after-jupiter.music.mp3")

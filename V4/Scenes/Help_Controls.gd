@@ -36,6 +36,7 @@ func _on_SettingsButton_pressed():
 
 func _on_ControlsButton_button_down():
 	get_tree().paused = false
+	MusicAutoLoad.Click()
 	
 	get_tree().change_scene("res://Scenes/Help_Controls.tscn")
 	

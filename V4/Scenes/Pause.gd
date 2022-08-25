@@ -31,6 +31,7 @@ func _on_Settings_button_down():
 func _on_LeaveGame_button_down():
 	
 	MusicAutoLoad.StopMusic()
+	MusicAutoLoad.StopInGameMusic()
 	MusicAutoLoad.Click()
 	get_tree().paused = false
 	get_tree().change_scene("res://Scenes/Main Menu.tscn")

@@ -32,6 +32,8 @@ func _physics_process(delta):
 		$LifeBar.texture = load("res://res/bosses/boss health bars/jupiter/jupiter.health.25%.png")
 	elif life > 2:
 		$LifeBar.texture = load("res://res/bosses/boss health bars/jupiter/jupiter.health.10%.png")
+	elif life < 2:
+		$LifeBar.texture = load("res://res/bosses/boss health bars/jupiter/jupiter.health.0%.png")
 
 		
 	if life <= 0:

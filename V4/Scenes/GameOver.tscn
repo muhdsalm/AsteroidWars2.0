@@ -68,5 +68,6 @@ text = "0"
 
 [node name="CrashSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
+volume_db = -10.0
 
 [connection signal="button_down" from="Button" to="." method="_on_Button_button_down"]

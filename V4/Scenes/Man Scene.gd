@@ -91,8 +91,11 @@ func _physics_process(delta):
 	
 	if spam <= 0:
 		get_tree().change_scene("res://Scenes/GameOver.tscn")
+		
+		
 	
 func _input(event):
+	
 	
 	if event.is_action_pressed("Fire"):
 		
@@ -109,4 +112,9 @@ func _input(event):
 		get_tree().paused = true
 		add_child(PauseMenu.instance())
 		
-		
+func _notification(what):
+	if what == NOTIFICATION_WM_FOCUS_OUT:
+			add_child(PauseMenu.instance())
+			print("unfocised")
+			MusicAutoLoad.StopMusic()
+			get_tree().paused = true
