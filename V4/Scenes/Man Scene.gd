@@ -26,6 +26,7 @@ var spam = 15
 var Jupiter = load("res://Assets/Jupiter.tscn")
 var bosshasspawned = false
 
+var unfocuspause = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -92,6 +93,14 @@ func _physics_process(delta):
 	if spam <= 0:
 		get_tree().change_scene("res://Scenes/GameOver.tscn")
 		
+	if PointSystem.paused:
+		
+		add_child(PauseMenu.instance())
+		print("nice")
+		MusicAutoLoad.StopMusic()
+		print("even nicer lol")
+		get_tree().paused = true
+		
 		
 	
 func _input(event):
@@ -107,14 +116,12 @@ func _input(event):
 		spam -= 1
 		
 	if event.is_action_pressed("Pause"):
-		
-		MusicAutoLoad.StopMusic()
-		get_tree().paused = true
-		add_child(PauseMenu.instance())
+		PointSystem.paused = true
+
+
+func _on_Timer_timeout():
+	get_tree().paused = true
 		
 func _notification(what):
 	if what == NOTIFICATION_WM_FOCUS_OUT:
-			add_child(PauseMenu.instance())
-			print("unfocised")
-			MusicAutoLoad.StopMusic()
-			get_tree().paused = true
+			PointSystem.paused = true

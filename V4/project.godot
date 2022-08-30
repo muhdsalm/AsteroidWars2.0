@@ -23,6 +23,7 @@ config/windows_native_icon="res://res/icon.ico"
 MusicAutoLoad="*res://AutoLoads/MusicAutoLoad.tscn"
 PointSystem="*res://AutoLoads/PointSystem.tscn"
 PerformanceMonitor="*res://AutoLoads/PerformanceMonitor.tscn"
+Saver="*res://AutoLoads/Saver.tscn"
 
 [display]
 

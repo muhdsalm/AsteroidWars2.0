@@ -12,6 +12,7 @@ var pointsleft = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	MusicAutoLoad.StopInGameMusic()
 	
 	if MusicAutoLoad.sound:
 		$CrashSound.play()
@@ -26,6 +27,7 @@ func _ready():
 	print(PointSystem.bestScore)
 	print(PointSystem.asteroidsDefeated)
 	pointsleft = PointSystem.points
+	Saver.saveData()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

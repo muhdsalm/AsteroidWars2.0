@@ -25,6 +25,6 @@ func _physics_process(delta):
 
 func _on_Area2D_body_entered(body):
 	PointSystem.points += 5
-	
+	print("killed by:", body)
 	PointSystem.asteroidsDefeated += 1 
 	queue_free()

@@ -12,6 +12,7 @@ var asteroidsDefeated = 0
 var bossIsOnTheScene = false
 var asteroidSpeed = 300
 var asteroidIncrementer = 1
+var paused = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
