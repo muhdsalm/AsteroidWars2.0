@@ -25,6 +25,7 @@ func _on_Resume_button_down():
 
 func _on_Settings_button_down():
 	
+	MusicAutoLoad.Click()
 	add_child(SettingsButton.instance())
 	
 

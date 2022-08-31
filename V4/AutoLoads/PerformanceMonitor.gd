@@ -14,7 +14,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$Node2D/FPS.text = String(Engine.get_frames_per_second())
+	$Node2D/FPS.text = "FPS: " + String(Engine.get_frames_per_second())
 	
 	if FPSShown:
 		$Node2D/FPS.visible = true

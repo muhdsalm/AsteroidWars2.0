@@ -95,6 +95,7 @@ func _physics_process(delta):
 		
 	if PointSystem.paused:
 		
+		$DefaultRocket.zeroOutTheVelocity()
 		add_child(PauseMenu.instance())
 		print("nice")
 		MusicAutoLoad.StopMusic()

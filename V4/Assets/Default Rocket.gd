@@ -49,6 +49,9 @@ func _input(event):
 		Velocity -= Vector2.RIGHT * speed
 	if event.is_action_released("Left"):
 		Velocity -= Vector2.LEFT * speed
+	
+func zeroOutTheVelocity():
+	Velocity = Vector2.ZERO
 		
 	
 

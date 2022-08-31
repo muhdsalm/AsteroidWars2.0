@@ -8,6 +8,7 @@ var tempCurrentScore = 0
 var tempCurrentBestScore = 0
 var tempCurrentAsteroidsDefeated = 0
 var pointsleft = 0
+var justUseGlobalScore = false
 
 
 # Called when the node enters the scene tree for the first time.
@@ -35,6 +36,11 @@ func _process(delta):
 	$Score.text = String(tempCurrentScore)
 	$BestScore.text = String(tempCurrentBestScore)
 	$AsteroidsDefeated.text = String(tempCurrentAsteroidsDefeated)
+	
+	if justUseGlobalScore:
+		$Score.text = String(PointSystem.points)
+		$BestScore.text = String(PointSystem.bestScore)
+		$AsteroidsDefeated.text = String(PointSystem.asteroidsDefeated)
 	
 	if pointsleft < 100:
 		pointsleft-=1
@@ -87,6 +93,7 @@ func _process(delta):
 
 	if pointsleft <= 0:
 		pointsleft = PointSystem.bestScore
+		justUseGlobalScore = true
 
 
 func _on_Button_button_down():
