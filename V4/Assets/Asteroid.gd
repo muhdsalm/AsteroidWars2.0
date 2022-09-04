@@ -19,7 +19,7 @@ func _physics_process(delta):
 	move_and_slide(Vector2.DOWN * PointSystem.asteroidSpeed)
 		
 	
-	if position.y > 700:
+	if position.y > 800:
 		queue_free()
 
 

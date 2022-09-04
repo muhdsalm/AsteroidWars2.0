@@ -19,10 +19,10 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if music_volume == -35:
+		music_volume = -10000
 	$MenuMusic.volume_db = music_volume
 	$JukeBox.volume_db = MusicAutoLoad.music_volume
-	if music_volume == -35:
-		$MenuMusic.volume_db = -100
 	
 
 func StartMusic():

@@ -6,6 +6,7 @@ extends KinematicBody2D
 # var b = "text"
 var Velocity = Vector2.ZERO
 var speed = 500
+export var shields = 2
 
 
 # Called when the node enters the scene tree for the first time.
@@ -14,9 +15,19 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
+func _process(delta):
+	$Sprite.global_position = Vector2(589, 636)
+	$Sprite2.global_position = Vector2(658, 636)
+	
+	if shields == 2:
+		$Sprite.visible = true
+		$Sprite2.visible = true
+	if shields == 1:
+		$Sprite.visible = true
+		$Sprite2.visible = false
+	if shields == 0:
+		$Sprite.visible = false
+		$Sprite2.visible = false
 func _physics_process(delta):
 	
 	move_and_collide(Velocity * delta)
@@ -60,5 +71,8 @@ func zeroOutTheVelocity():
 
 func _on_Area2D_body_entered(body):
 	
-	MusicAutoLoad.StopMusic()
-	get_tree().change_scene("res://Scenes/GameOver.tscn")
+	shields -= 1
+	if shields == -1:
+		MusicAutoLoad.StopMusic()
+		get_tree().change_scene("res://Scenes/GameOver.tscn")
+	
