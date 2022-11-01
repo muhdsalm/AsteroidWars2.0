@@ -14,6 +14,9 @@ var asteroidSpeed = 300
 var asteroidIncrementer = 1
 var paused = false
 
+var golden_asteroids = 0
+var temp_golden_asteroids = 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -25,7 +28,6 @@ func _process(delta):
 		asteroidSpeed += 100
 		asteroidIncrementer += 1
 		#print(asteroidIncrementer)
-	print(asteroidSpeed)
 func resetSpeed():
 	asteroidSpeed = 300
 	asteroidIncrementer = 1

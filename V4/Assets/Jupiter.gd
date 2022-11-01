@@ -5,6 +5,7 @@ extends KinematicBody2D
 # var a = 2
 # var b = "text"
 var life = 20
+var isdead = false
 
 
 # Called when the node enters the scene tree for the first time.
@@ -35,17 +36,23 @@ func _physics_process(delta):
 	elif life < 2:
 		$LifeBar.texture = load("res://res/bosses/boss health bars/jupiter/jupiter.health.0%.png")
 
-		
-	if life <= 0:
-		PointSystem.bossIsOnTheScene = false
+
+	if life <= 0 and !isdead:
 		print("me dead xD")
+		isdead = true
 		MusicAutoLoad.StartAfterJupiterMusic()
-		queue_free()
+		$Area2D.queue_free()
+		$Sprite.queue_free()
+		$Timer.start()
+
 
 
 func _on_Area2D_body_entered(body):
 	life -= 1
 	PointSystem.points += 15
-	print("Life minused")
-	print(life)
 
+
+
+func _on_Timer_timeout():
+	PointSystem.bossIsOnTheScene = false
+	queue_free()

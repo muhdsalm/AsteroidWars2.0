@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://res/UI/main_page_small.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Main Menu.gd" type="Script" id=2]
 [ext_resource path="res://res/fonts/fixedsys.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://res/fonts/ScoreFont.tres" type="DynamicFontData" id=4]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -17,6 +18,10 @@
 [sub_resource type="DynamicFont" id=6]
 size = 32
 font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 32
+font_data = ExtResource( 4 )
 
 [node name="Main Menu" type="Control"]
 anchor_right = 1.0
@@ -97,6 +102,15 @@ margin_top = 250.0
 margin_right = 61.0
 margin_bottom = 282.0
 custom_fonts/font = SubResource( 6 )
+text = "0"
+
+[node name="GoldemAsteroidLabel" type="Label" parent="."]
+modulate = Color( 1, 0.94902, 0, 1 )
+margin_left = 37.0
+margin_top = 398.0
+margin_right = 114.0
+margin_bottom = 430.0
+custom_fonts/font = SubResource( 7 )
 text = "0"
 
 [connection signal="button_down" from="PlayButton" to="." method="_on_PlayButton_pressed"]

@@ -7,6 +7,7 @@ extends Control
 var tempCurrentScore = 0
 var tempCurrentBestScore = 0
 var tempCurrentAsteroidsDefeated = 0
+var tempCurrentGAGained = PointSystem.temp_golden_asteroids
 var pointsleft = 0
 var justUseGlobalScore = false
 
@@ -24,6 +25,7 @@ func _ready():
 		PointSystem.bestScore = PointSystem.points
 	
 	PointSystem.totalPoints = PointSystem.points
+	PointSystem.golden_asteroids += PointSystem.temp_golden_asteroids
 	print(PointSystem.points)
 	print(PointSystem.bestScore)
 	print(PointSystem.asteroidsDefeated)
@@ -36,11 +38,13 @@ func _process(delta):
 	$Score.text = String(tempCurrentScore)
 	$BestScore.text = String(tempCurrentBestScore)
 	$AsteroidsDefeated.text = String(tempCurrentAsteroidsDefeated)
+	$GAGained.text = String(tempCurrentGAGained)
 	
 	if justUseGlobalScore:
 		$Score.text = String(PointSystem.points)
 		$BestScore.text = String(PointSystem.bestScore)
 		$AsteroidsDefeated.text = String(PointSystem.asteroidsDefeated)
+		$GAGained.text = String(PointSystem.golden_asteroids)
 	
 	if pointsleft < 100:
 		pointsleft-=1

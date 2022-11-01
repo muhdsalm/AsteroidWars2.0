@@ -24,7 +24,8 @@ func saveData():
 			"FPSShown": PerformanceMonitor.FPSShown,
 			"bestScore": PointSystem.bestScore,
 			"music_volume": MusicAutoLoad.music_volume,
-			"sound": MusicAutoLoad.sound
+			"sound": MusicAutoLoad.sound,
+			"golden_asteroids": PointSystem.golden_asteroids
 	})
 	else:
 		$AcceptDialog.dialog_text = "Saving game data failed with: " + error
@@ -42,6 +43,7 @@ func loadData():
 			PointSystem.bestScore = game_data["bestScore"]
 			MusicAutoLoad.music_volume = game_data["music_volume"]
 			MusicAutoLoad.sound = game_data["sound"]
+			PointSystem.golden_asteroids = game_data["golden_asteroids"]
 		else:
 			$AcceptDialog.dialog_text = "Loading Game data failed with: " + error
 			$AcceptDialog.show()
