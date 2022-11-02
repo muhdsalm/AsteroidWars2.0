@@ -17,6 +17,14 @@ var paused = false
 var golden_asteroids = 0
 var temp_golden_asteroids = 0
 
+var rockets = {
+	"Bullet": false,
+	"Lucky": false,
+	"Time": false,
+	"US_military": false,
+	"Lucky_military": false
+}
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

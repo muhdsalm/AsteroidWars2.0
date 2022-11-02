@@ -30,7 +30,7 @@ func _physics_process(delta):
 
 func _on_Area2D_body_entered(body):
 	if golden_asteroid:
-		PointSystem.temp_golden_asteroids += int(rand_range(5, 10))
+		PointSystem.temp_golden_asteroids += int(rand_range(1, 3))
 	PointSystem.points += 5
 	print("killed by:", body)
 	PointSystem.asteroidsDefeated += 1 

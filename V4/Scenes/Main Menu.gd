@@ -41,3 +41,8 @@ func _on_QuitButton_pressed():
 func _on_MyStationButton_button_down():
 	MusicAutoLoad.Click()
 	get_tree().change_scene("res://Scenes/MyStation.tscn")
+
+
+func _on_ShopButton_button_down():
+	MusicAutoLoad.Click()
+	get_tree().change_scene("res://Scenes/Rocket Page Store.tscn")
