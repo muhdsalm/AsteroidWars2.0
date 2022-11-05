@@ -10,7 +10,7 @@ var golden_asteroid = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	PointSystem.spawnDelay = 1000 - int(PointSystem.points / 100)
-	if int(rand_range(0, 10)) == 1:
+	if int(rand_range(0, PointSystem.GA_max_random_number)) == 1:
 		golden_asteroid = true
 		$Sprite.texture = load("res://res/Asteroids/golden_asteroid.png")
 		print("SHINY!!!")

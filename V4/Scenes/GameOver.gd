@@ -44,7 +44,7 @@ func _process(delta):
 		$Score.text = String(PointSystem.points)
 		$BestScore.text = String(PointSystem.bestScore)
 		$AsteroidsDefeated.text = String(PointSystem.asteroidsDefeated)
-		$GAGained.text = String(PointSystem.golden_asteroids)
+		$GAGained.text = String(PointSystem.temp_golden_asteroids)
 	
 	if pointsleft < 100:
 		pointsleft-=1
@@ -107,6 +107,7 @@ func _on_Button_button_down():
 	PointSystem.points = 0
 	PointSystem.asteroidsDefeated = 0
 	PointSystem.spawnDelay = 1000
+	PointSystem.temp_golden_asteroids = 0
 	PointSystem.resetSpeed()
 	get_tree().change_scene("res://Scenes/Man Scene.tscn")
 	

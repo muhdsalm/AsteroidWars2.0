@@ -7,9 +7,10 @@ extends KinematicBody2D
 var Velocity = Vector2.ZERO
 var speed = 500
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -39,17 +40,13 @@ func _input(event):
 		Velocity.x = -speed
 		
 	if event.is_action_released("Down"):
-		if Velocity.y > 0:
-			Velocity.y = 0
+		Velocity.y = 0
 	if event.is_action_released("Up"):
-		if Velocity.y < 0:
-			Velocity.y = 0
+		Velocity.y = 0
 	if event.is_action_released("Right"):
-		if Velocity.x > 0:
-			Velocity.x = 0
+		Velocity.y = 0
 	if event.is_action_released("Left"):
-		if Velocity.x < 0:
-			Velocity.x = 0
+		Velocity.y = 0
 	
 func zeroOutTheVelocity():
 	Velocity = Vector2.ZERO
@@ -60,6 +57,9 @@ func zeroOutTheVelocity():
 
 
 func _on_Area2D_body_entered(body):
+	
+	if int(rand_range(0, 100)) <= 25:
+		return
 	
 	MusicAutoLoad.StopMusic()
 	get_tree().change_scene("res://Scenes/GameOver.tscn")

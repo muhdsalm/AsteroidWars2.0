@@ -1,5 +1,14 @@
 extends Node
 
+enum Rockets {
+	Default,
+	Bullet,
+	Lucky,
+	Time,
+	US_Military,
+	Lucky_military
+}
+var selected_rockets = Rockets.Default
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -25,9 +34,13 @@ var rockets = {
 	"Lucky_military": false
 }
 
+#The lucky rocket increases the percentage of GAs. So it will reduce
+#this number in it's ready function.
+var GA_max_random_number = 10
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

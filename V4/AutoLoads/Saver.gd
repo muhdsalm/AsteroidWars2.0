@@ -26,7 +26,9 @@ func saveData():
 			"music_volume": MusicAutoLoad.music_volume,
 			"sound": MusicAutoLoad.sound,
 			"golden_asteroids": PointSystem.golden_asteroids,
-			"rockets": PointSystem.rockets
+			"rockets": PointSystem.rockets,
+			"selected_rocket": PointSystem.selected_rockets,
+			"gmrn": PointSystem.GA_max_random_number
 	})
 	else:
 		$AcceptDialog.dialog_text = "Saving game data failed with: " + error
@@ -46,6 +48,8 @@ func loadData():
 			MusicAutoLoad.sound = game_data["sound"]
 			PointSystem.golden_asteroids = game_data["golden_asteroids"]
 			PointSystem.rockets = game_data["rockets"]
+			PointSystem.selected_rockets = game_data["selected_rocket"]
+			PointSystem.GA_max_random_number = game_data["gmrn"]
 		else:
 			$AcceptDialog.dialog_text = "Loading Game data failed with: " + error
 			$AcceptDialog.show()

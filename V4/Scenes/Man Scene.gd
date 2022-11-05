@@ -28,8 +28,48 @@ var bosshasspawned = false
 
 var unfocuspause = false
 
+var Bullet_rocket = preload("res://Assets/Rockets/Bullet Rocket.tscn").instance(PackedScene.GEN_EDIT_STATE_MAIN)
+var Lucky_rocket = preload("res://Assets/Rockets/Lucky Rocket.tscn").instance(PackedScene.GEN_EDIT_STATE_MAIN)
+var Time_rocket = preload("res://Assets/Rockets/Time Rocket.tscn").instance(PackedScene.GEN_EDIT_STATE_MAIN)
+var US_mil_rocket = preload("res://Assets/Rockets/US military rocket.tscn").instance(PackedScene.GEN_EDIT_STATE_MAIN)
+var Lucky_mil_rocket = preload("res://Assets/Rockets/Lucky military rocket.tscn").instance(PackedScene.GEN_EDIT_STATE_MAIN)
+
+onready var current_rocket = $DefaultRocket
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	current_rocket = $DefaultRocket
+	
+	if PointSystem.selected_rockets == PointSystem.Rockets.Bullet:
+		$DefaultRocket.queue_free()
+		current_rocket = Bullet_rocket
+		add_child(current_rocket)
+		current_rocket.position = $DefaultRocket.position
+	if PointSystem.selected_rockets == PointSystem.Rockets.Lucky:
+		Lucky_rocket.position = $DefaultRocket.position
+		$DefaultRocket.queue_free()
+		current_rocket = Lucky_rocket
+		add_child(Lucky_rocket)
+		Lucky_rocket.name = "DefaultRocket"
+	if PointSystem.selected_rockets == PointSystem.Rockets.Time:
+		Time_rocket.position = $DefaultRocket.position
+		$DefaultRocket.queue_free()
+		current_rocket = Time_rocket
+		add_child(Time_rocket)
+		Time_rocket.name = "DefaultRocket"
+	if PointSystem.selected_rockets == PointSystem.Rockets.Lucky_military:
+		Lucky_mil_rocket.position = $DefaultRocket.position
+		$DefaultRocket.queue_free()
+		current_rocket = Lucky_mil_rocket
+		add_child(Lucky_mil_rocket)
+		Lucky_mil_rocket.name = "DefaultRocket"
+	if PointSystem.selected_rockets == PointSystem.Rockets.US_Military:
+		US_mil_rocket.position = $DefaultRocket.position
+		$DefaultRocket.queue_free()
+		current_rocket = US_mil_rocket
+		add_child(US_mil_rocket)
+		US_mil_rocket.name = "DefaultRocket"
+	
 	MusicAutoLoad.StopMusic()
 	MusicAutoLoad.PlayMusic()
 	$Node2D/Score.add_color_override("font_color", Color(1,1,0,1))
@@ -95,7 +135,7 @@ func _physics_process(delta):
 		
 	if PointSystem.paused:
 		
-		$DefaultRocket.zeroOutTheVelocity()
+		current_rocket.zeroOutTheVelocity()
 		add_child(PauseMenu.instance())
 		print("nice")
 		MusicAutoLoad.StopMusic()
@@ -112,7 +152,7 @@ func _input(event):
 		Bullets.append(Bullet)
 		Bullets[Bullets.size() - 1] = Bullets[Bullets.size() - 1].instance()
 		add_child(Bullets[Bullets.size() - 1])
-		Bullets[Bullets.size() - 1].position = $DefaultRocket.position
+		Bullets[Bullets.size() - 1].position = current_rocket.position
 		
 		spam -= 1
 		
