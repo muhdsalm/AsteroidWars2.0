@@ -46,29 +46,25 @@ func _ready():
 		add_child(current_rocket)
 		current_rocket.position = $DefaultRocket.position
 	if PointSystem.selected_rockets == PointSystem.Rockets.Lucky:
-		Lucky_rocket.position = $DefaultRocket.position
 		$DefaultRocket.queue_free()
 		current_rocket = Lucky_rocket
-		add_child(Lucky_rocket)
-		Lucky_rocket.name = "DefaultRocket"
+		add_child(current_rocket)
+		Lucky_rocket.position = $DefaultRocket.position
 	if PointSystem.selected_rockets == PointSystem.Rockets.Time:
-		Time_rocket.position = $DefaultRocket.position
 		$DefaultRocket.queue_free()
 		current_rocket = Time_rocket
-		add_child(Time_rocket)
-		Time_rocket.name = "DefaultRocket"
+		add_child(current_rocket)
+		Time_rocket.position = $DefaultRocket.position
 	if PointSystem.selected_rockets == PointSystem.Rockets.Lucky_military:
-		Lucky_mil_rocket.position = $DefaultRocket.position
 		$DefaultRocket.queue_free()
 		current_rocket = Lucky_mil_rocket
-		add_child(Lucky_mil_rocket)
-		Lucky_mil_rocket.name = "DefaultRocket"
+		add_child(current_rocket)
+		Lucky_mil_rocket.position = $DefaultRocket.position
 	if PointSystem.selected_rockets == PointSystem.Rockets.US_Military:
-		US_mil_rocket.position = $DefaultRocket.position
 		$DefaultRocket.queue_free()
 		current_rocket = US_mil_rocket
-		add_child(US_mil_rocket)
-		US_mil_rocket.name = "DefaultRocket"
+		add_child(current_rocket)
+		US_mil_rocket.position = $DefaultRocket.position
 	
 	MusicAutoLoad.StopMusic()
 	MusicAutoLoad.PlayMusic()

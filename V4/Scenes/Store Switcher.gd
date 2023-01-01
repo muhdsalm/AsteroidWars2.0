@@ -12,8 +12,17 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	if PointSystem.rockets["Bullet"]:
+		$"Red Bars/Bullet".visible = true
+	if PointSystem.rockets["Lucky"]:
+		$"Red Bars/Lucky".visible = true
+	if PointSystem.rockets["Time"]:
+		$"Red Bars/TIME".visible = true
+	if PointSystem.rockets["US_military"]:
+		$"Red Bars/US mil".visible = true
+	if PointSystem.rockets["Lucky_military"]:
+		$"Red Bars/Lucky mil".visible = true
 
 
 func _on_Button_button_down():

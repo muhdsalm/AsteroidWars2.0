@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://res/UI/pause_menu_page_small.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Pause.gd" type="Script" id=2]
+[ext_resource path="res://res/fonts/fixedsys.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -12,6 +13,10 @@
 [sub_resource type="StyleBoxEmpty" id=4]
 
 [sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="DynamicFont" id=6]
+size = 64
+font_data = ExtResource( 3 )
 
 [node name="Pause" type="Control"]
 pause_mode = 2
@@ -57,6 +62,24 @@ custom_styles/focus = SubResource( 3 )
 custom_styles/disabled = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="TimerLabel" type="Node2D" parent="."]
+visible = false
+z_index = 10
+
+[node name="Label" type="Label" parent="TimerLabel"]
+margin_left = 335.0
+margin_top = 330.0
+margin_right = 375.0
+margin_bottom = 394.0
+custom_colors/font_color = Color( 1, 1, 0, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "0"
+
 [connection signal="button_down" from="Resume" to="." method="_on_Resume_button_down"]
 [connection signal="button_down" from="Settings" to="." method="_on_Settings_button_down"]
 [connection signal="button_down" from="LeaveGame" to="." method="_on_LeaveGame_button_down"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

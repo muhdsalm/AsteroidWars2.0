@@ -40,17 +40,13 @@ func _input(event):
 		Velocity.x = -speed
 		
 	if event.is_action_released("Down"):
-		if Velocity.y > 0:
-			Velocity.y = 0
+		Velocity.y = 0
 	if event.is_action_released("Up"):
-		if Velocity.y < 0:
-			Velocity.y = 0
+		Velocity.y = 0
 	if event.is_action_released("Right"):
-		if Velocity.x > 0:
-			Velocity.x = 0
+		Velocity.x = 0
 	if event.is_action_released("Left"):
-		if Velocity.x < 0:
-			Velocity.x = 0
+		Velocity.x = 0
 	
 func zeroOutTheVelocity():
 	Velocity = Vector2.ZERO

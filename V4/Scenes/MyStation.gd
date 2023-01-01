@@ -21,25 +21,36 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$Sprite.set_modulate(Color(0, 1, 1, 1))
-	$Sprite2.set_modulate(Color(0, 1, 1, 1))
-	$Sprite3.set_modulate(Color(0, 1, 1, 1))
-	$Sprite4.set_modulate(Color(0, 1, 1, 1))
-	$Sprite5.set_modulate(Color(0, 1, 1, 1))
-	$Sprite6.set_modulate(Color(0, 1, 1, 1))
+	$Sprite.set_modulate(Color(0, 1, 1))
+	$Sprite2.set_modulate(Color(0, 1, 1))
+	$Sprite3.set_modulate(Color(0, 1, 1))
+	$Sprite4.set_modulate(Color(0, 1, 1))
+	$Sprite5.set_modulate(Color(0, 1, 1))
+	$Sprite6.set_modulate(Color(0, 1, 1))
 	
 	if PointSystem.selected_rockets == PointSystem.Rockets.Default:
-		$Sprite.set_modulate(Color(1, 1, 1, 1))
+		$Sprite.set_modulate(Color(1, 1, 1))
 	if PointSystem.selected_rockets == PointSystem.Rockets.Bullet:
-		$Sprite2.set_modulate(Color(1, 1, 1, 1))
+		$Sprite2.set_modulate(Color(1, 1, 1))
 	if PointSystem.selected_rockets == PointSystem.Rockets.Lucky:
-		$Sprite3.set_modulate(Color(1, 1, 1, 1))
+		$Sprite3.set_modulate(Color(1, 1, 1))
 	if PointSystem.selected_rockets == PointSystem.Rockets.Time:
-		$Sprite4.set_modulate(Color(1, 1, 1, 1))
+		$Sprite4.set_modulate(Color(1, 1, 1))
 	if PointSystem.selected_rockets == PointSystem.Rockets.US_Military:
-		$Sprite5.set_modulate(Color(1, 1, 1, 1))
+		$Sprite5.set_modulate(Color(1, 1, 1))
 	if PointSystem.selected_rockets == PointSystem.Rockets.Lucky_military:
-		$Sprite6.set_modulate(Color(1, 1, 1, 1))
+		$Sprite6.set_modulate(Color(1, 1, 1))
+		
+	if !PointSystem.rockets["Bullet"]:
+		$Sprite2.set_modulate(Color(1, 1, 1, 0.5))
+	if !PointSystem.rockets["Lucky"]:
+		$Sprite3.set_modulate(Color(1, 1, 1, 0.5))
+	if !PointSystem.rockets["Time"]:
+		$Sprite4.set_modulate(Color(1, 1, 1, 0.5))
+	if !PointSystem.rockets["US_military"]:
+		$Sprite5.set_modulate(Color(1, 1, 1, 0.5))
+	if !PointSystem.rockets["Lucky_military"]:
+		$Sprite6.set_modulate(Color(1, 1, 1, 0.5))
 
 
 
