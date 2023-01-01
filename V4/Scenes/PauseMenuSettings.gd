@@ -19,7 +19,17 @@ func _process(delta):
 	MusicAutoLoad.sound = $Node2D/Sound.pressed
 	PerformanceMonitor.FPSShown = $Node2D/ShowFPS.pressed
 	$Node2D/MusicSlider/Volume.text = String(int( 100 - (($Node2D/MusicSlider.value / -1) / 0.35)))
+	Saver.saveData()
 
 
 func _on_LeaveButton_button_down():
+	MusicAutoLoad.Click()
 	queue_free()
+
+
+func _on_Sound_pressed():
+	MusicAutoLoad.Click()
+
+
+func _on_ShowFPS_button_down():
+	MusicAutoLoad.Click()

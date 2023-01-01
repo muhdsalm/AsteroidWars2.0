@@ -118,7 +118,8 @@ func _physics_process(delta):
 		
 		if spam <= 5:
 			$Node2D/SpamBar.color = Color(1, 0, 0, 1)
-		
+			if MusicAutoLoad.sound:
+				$"Overheat Warn".play()
 		if spam > 5 and spam <= 10:
 			$Node2D/SpamBar.color = Color(1, 1, 0, 1)
 		if spam > 10:
