@@ -11,12 +11,14 @@ colors = PoolColorArray( 0, 1, 0, 1, 0, 1, 0, 1 )
 [sub_resource type="GradientTexture" id=10]
 gradient = SubResource( 9 )
 
-[sub_resource type="Gradient" id=11]
-offsets = PoolRealArray( 0.966667, 1 )
+[sub_resource type="Gradient" id=26]
+offsets = PoolRealArray( 0.783333, 0.975 )
 colors = PoolColorArray( 0, 1, 0, 1, 0, 1, 0, 1 )
 
-[sub_resource type="GradientTexture" id=12]
-gradient = SubResource( 11 )
+[sub_resource type="GradientTexture2D" id=27]
+gradient = SubResource( 26 )
+width = 8
+height = 8
 
 [sub_resource type="Gradient" id=13]
 offsets = PoolRealArray( 0.975, 1 )
@@ -120,7 +122,7 @@ margin_top = -2.0
 margin_right = 712.0
 margin_bottom = 240.0
 custom_icons/tick = SubResource( 10 )
-custom_icons/grabber_highlight = SubResource( 12 )
+custom_icons/grabber_highlight = SubResource( 27 )
 custom_icons/grabber = SubResource( 14 )
 custom_styles/slider = SubResource( 15 )
 custom_styles/grabber_area_highlight = SubResource( 16 )

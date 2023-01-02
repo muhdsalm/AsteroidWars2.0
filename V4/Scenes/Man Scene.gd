@@ -95,6 +95,7 @@ func _physics_process(delta):
 	if !PointSystem.bossIsOnTheScene:
 		if OS.get_ticks_msec() - then > delay:
 			
+			randomPosition = rng.randi_range(0, 700)
 			$AsteroidSpawner.position.x = randomPosition
 			
 			Asteroids.append(Asteroid)
@@ -105,7 +106,6 @@ func _physics_process(delta):
 			
 			delay = rng.randi_range(1, PointSystem.spawnDelay)
 			then = OS.get_ticks_msec()
-			randomPosition = rng.randi_range(0, 700)
 		
 	$Node2D/Score.text = String(PointSystem.points)
 	
