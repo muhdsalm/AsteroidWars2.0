@@ -80,6 +80,8 @@ func _ready():
 	MusicAutoLoad.StartInGameMusic()
 	rng.randomize()
 	randomPosition = rng.randi_range(0, 700)
+	PointSystem.bossIsOnTheScene = false
+	PointSystem.temp_golden_asteroids = 0
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -158,6 +160,8 @@ func _input(event):
 		Bullets[Bullets.size() - 1].position = current_rocket.position
 		
 		spam -= 1
+		if spam <= 5:
+			$"Overheat Warn".play()
 		
 	if event.is_action_pressed("Pause"):
 		PointSystem.paused = true

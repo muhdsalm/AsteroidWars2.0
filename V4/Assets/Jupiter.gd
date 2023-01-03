@@ -43,6 +43,7 @@ func _physics_process(delta):
 		MusicAutoLoad.StartAfterJupiterMusic()
 		$Area2D.queue_free()
 		$Sprite.queue_free()
+		$CollisionShape2D.queue_free()
 		$Timer.start()
 
 
