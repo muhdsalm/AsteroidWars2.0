@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/Man Scene.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Default Rocket.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/AsteroidSpawner.gd" type="Script" id=3]
 [ext_resource path="res://res/fonts/fixedsys.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://res/sound/sound effects/overheat.warn.wav" type="AudioStream" id=5]
+[ext_resource path="res://res/icons/Cooldown Bar/cooldown.bar.cool.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 60
@@ -38,6 +39,11 @@ margin_right = 680.0
 margin_bottom = 124.0
 custom_fonts/font = SubResource( 1 )
 text = "10"
+
+[node name="SpamBarFrame" type="Sprite" parent="Node2D"]
+scale = Vector2( 0.231121, 0.325444 )
+texture = ExtResource( 6 )
+centered = false
 
 [node name="Overheat Warn" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )

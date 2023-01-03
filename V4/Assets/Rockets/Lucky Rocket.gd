@@ -10,7 +10,7 @@ var speed = 500
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	PointSystem.GA_max_random_number = 9
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -58,6 +58,7 @@ func zeroOutTheVelocity():
 
 func _on_Area2D_body_entered(body):
 	
+	PointSystem.GA_max_random_number = 10
 	MusicAutoLoad.StopMusic()
 	get_tree().change_scene("res://Scenes/GameOver.tscn")
 	

@@ -13,6 +13,7 @@ func _ready():
 		MusicAutoLoad.StartMusic()
 	$HighScoreLevel.text = String(PointSystem.bestScore)
 	$GoldemAsteroidLabel.text = String(PointSystem.golden_asteroids)
+	PointSystem.GA_max_random_number = 10
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -98,11 +98,14 @@ func _physics_process(delta):
 			randomPosition = rng.randi_range(0, 700)
 			$AsteroidSpawner.position.x = randomPosition
 			
-			Asteroids.append(Asteroid)
+			"""Asteroids.append(Asteroid)
 			Asteroids[Asteroids.size() - 1] = Asteroids[Asteroids.size() - 1].instance()
 			add_child(Asteroids[Asteroids.size() - 1])
 			Asteroids[Asteroids.size() - 1].position.x  = $AsteroidSpawner.position.x
-			Asteroids[Asteroids.size() - 1].position.y = $AsteroidSpawner.position.y
+			Asteroids[Asteroids.size() - 1].position.y = $AsteroidSpawner.position.y"""
+			var asteroid = Asteroid.instance()
+			asteroid.position = $AsteroidSpawner.position
+			add_child(asteroid)
 			
 			delay = rng.randi_range(1, PointSystem.spawnDelay)
 			then = OS.get_ticks_msec()
@@ -120,10 +123,13 @@ func _physics_process(delta):
 			$Node2D/SpamBar.color = Color(1, 0, 0, 1)
 			if MusicAutoLoad.sound:
 				$"Overheat Warn".play()
+			$Node2D/SpamBarFrame.texture = load("res://res/icons/Cooldown Bar/cooldown.bar.overheat.png")
 		if spam > 5 and spam <= 10:
 			$Node2D/SpamBar.color = Color(1, 1, 0, 1)
+			$Node2D/SpamBarFrame.texture = load("res://res/icons/Cooldown Bar/cooldown.bar.hot.png")
 		if spam > 10:
 			$Node2D/SpamBar.color = Color(0, 1, 0, 1)
+			$Node2D/SpamBarFrame.texture = load("res://res/icons/Cooldown Bar/cooldown.bar.cool.png")
 			
 	$Node2D/SpamBar.rect_size.x = spam * 7
 	
