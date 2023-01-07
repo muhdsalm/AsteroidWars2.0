@@ -1,11 +1,16 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://res/bosses/jupiter_boss.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Jupiter.gd" type="Script" id=2]
 [ext_resource path="res://res/bosses/boss health bars/jupiter/jupiter.health.100%.png" type="Texture" id=3]
+[ext_resource path="res://res/fonts/fixedsys.ttf" type="DynamicFontData" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 96.1301
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+font_data = ExtResource( 4 )
 
 [node name="Jupiter" type="KinematicBody2D"]
 collision_layer = 4
@@ -13,6 +18,7 @@ collision_mask = 4
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
+visible = false
 position = Vector2( 360, -250 )
 scale = Vector2( 3, 3 )
 z_index = 1
@@ -48,5 +54,36 @@ texture = ExtResource( 3 )
 wait_time = 10.0
 one_shot = true
 
+[node name="Jupiter Approach" type="Label" parent="."]
+margin_right = 718.0
+margin_bottom = 698.0
+custom_fonts/font = SubResource( 2 )
+text = "Jupiter is approaching
+KEEP SHOOTING!!!"
+align = 1
+valign = 1
+
+[node name="Jupiter End" type="Label" parent="."]
+visible = false
+margin_right = 718.0
+margin_bottom = 698.0
+custom_fonts/font = SubResource( 2 )
+text = "Approaching Kuiper Belt"
+align = 1
+valign = 1
+
+[node name="StartLabelTimers" type="Node2D" parent="."]
+
+[node name="FlashTimer" type="Timer" parent="StartLabelTimers"]
+wait_time = 0.5
+autostart = true
+
+[node name="EndTimer" type="Timer" parent="StartLabelTimers"]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="StartLabelTimers/FlashTimer" to="." method="_on_FlashTimer_timeout"]
+[connection signal="timeout" from="StartLabelTimers/EndTimer" to="." method="_on_EndTimer_timeout"]

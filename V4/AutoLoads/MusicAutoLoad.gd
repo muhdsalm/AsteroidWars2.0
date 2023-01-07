@@ -56,3 +56,7 @@ func StartAfterJupiterMusic():
 	$JukeBox.stop()
 	$JukeBox.stream = load("res://res/sound/AFTER boss fight music/in-game.boss-fight.after-jupiter.music.mp3")
 	$JukeBox.play()
+func StartAfterProximaCentauriMusic():
+	$JukeBox.stop()
+	$JukeBox.stream = load("res://res/sound/AFTER boss fight music/in-game.boss-fight.after-proxima-centauri.music.mp3")
+	$JukeBox.play()

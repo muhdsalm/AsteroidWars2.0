@@ -24,6 +24,7 @@ var PauseMenu = load("res://Scenes/Pause.tscn")
 var spam = 15
 
 var Jupiter = load("res://Assets/Jupiter.tscn")
+var Proxima_Centauri = load("res://Assets/Proxima Centauri.tscn")
 var bosshasspawned = false
 
 var unfocuspause = false
@@ -80,7 +81,7 @@ func _ready():
 	MusicAutoLoad.StartInGameMusic()
 	rng.randomize()
 	randomPosition = rng.randi_range(0, 700)
-	PointSystem.bossIsOnTheScene = false
+	PointSystem.bossIsOnTheScene = true
 	PointSystem.temp_golden_asteroids = 0
 	
 
@@ -92,6 +93,11 @@ func _physics_process(delta):
 		add_child(Jupiter.instance())
 		bosshasspawned = true
 		
+	if PointSystem.points > 6000 and !bosshasspawned:
+		PointSystem.bossIsOnTheScene = true
+		add_child(Proxima_Centauri.instance())
+		bosshasspawned = true
+		
 		
 		
 	if !PointSystem.bossIsOnTheScene:
@@ -100,11 +106,6 @@ func _physics_process(delta):
 			randomPosition = rng.randi_range(0, 700)
 			$AsteroidSpawner.position.x = randomPosition
 			
-			"""Asteroids.append(Asteroid)
-			Asteroids[Asteroids.size() - 1] = Asteroids[Asteroids.size() - 1].instance()
-			add_child(Asteroids[Asteroids.size() - 1])
-			Asteroids[Asteroids.size() - 1].position.x  = $AsteroidSpawner.position.x
-			Asteroids[Asteroids.size() - 1].position.y = $AsteroidSpawner.position.y"""
 			var asteroid = Asteroid.instance()
 			asteroid.position = $AsteroidSpawner.position
 			add_child(asteroid)
@@ -123,7 +124,7 @@ func _physics_process(delta):
 		
 		if spam <= 5:
 			$Node2D/SpamBar.color = Color(1, 0, 0, 1)
-			if MusicAutoLoad.sound:
+			if MusicAutoLoad.sound and !$"Overheat Warn".playing:
 				$"Overheat Warn".play()
 			$Node2D/SpamBarFrame.texture = load("res://res/icons/Cooldown Bar/cooldown.bar.overheat.png")
 		if spam > 5 and spam <= 10:
@@ -154,14 +155,16 @@ func _input(event):
 	
 	if event.is_action_pressed("Fire"):
 		
-		Bullets.append(Bullet)
-		Bullets[Bullets.size() - 1] = Bullets[Bullets.size() - 1].instance()
-		add_child(Bullets[Bullets.size() - 1])
-		Bullets[Bullets.size() - 1].position = current_rocket.position
+		var bullet = Bullet.instance()
+		bullet.position = current_rocket.position
+		add_child(bullet)
 		
 		spam -= 1
 		if spam <= 5:
-			$"Overheat Warn".play()
+			$Node2D/SpamBar.color = Color(1, 0, 0, 1)
+			if MusicAutoLoad.sound and !$"Overheat Warn".playing:
+				$"Overheat Warn".play()
+			$Node2D/SpamBarFrame.texture = load("res://res/icons/Cooldown Bar/cooldown.bar.overheat.png")
 		
 	if event.is_action_pressed("Pause"):
 		PointSystem.paused = true
@@ -173,3 +176,16 @@ func _on_Timer_timeout():
 func _notification(what):
 	if what == NOTIFICATION_WM_FOCUS_OUT:
 			PointSystem.paused = true
+
+
+func _on_FlashTimer_timeout():
+	if $StartLabel.get_modulate() == Color(1, 1, 1, 1):
+		$StartLabel.set_modulate(Color(1, 0, 0, 1))
+	else:
+		$StartLabel.set_modulate(Color(1, 1, 1, 1))
+
+
+func _on_EndTimer_timeout():
+	$StartLabelTimers/FlashTimer.stop()
+	$StartLabel.visible = false
+	PointSystem.bossIsOnTheScene = false

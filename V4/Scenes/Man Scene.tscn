@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/Man Scene.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Default Rocket.tscn" type="PackedScene" id=2]
@@ -9,6 +9,10 @@
 
 [sub_resource type="DynamicFont" id=1]
 size = 60
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
 font_data = ExtResource( 4 )
 
 [node name="Man Scene" type="Node2D"]
@@ -28,7 +32,7 @@ script = ExtResource( 3 )
 z_index = 10
 
 [node name="SpamBar" type="ColorRect" parent="Node2D"]
-margin_right = 100.0
+margin_right = 105.0
 margin_bottom = 40.0
 color = Color( 0, 1, 0, 1 )
 
@@ -41,10 +45,32 @@ custom_fonts/font = SubResource( 1 )
 text = "10"
 
 [node name="SpamBarFrame" type="Sprite" parent="Node2D"]
-scale = Vector2( 0.231121, 0.325444 )
+scale = Vector2( 0.244, 0.325 )
 texture = ExtResource( 6 )
 centered = false
 
 [node name="Overheat Warn" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
 volume_db = -20.0
+
+[node name="StartLabel" type="Label" parent="."]
+margin_right = 718.0
+margin_bottom = 698.0
+custom_fonts/font = SubResource( 2 )
+text = "Approaching asteroid belt"
+align = 1
+valign = 1
+
+[node name="StartLabelTimers" type="Node2D" parent="."]
+
+[node name="FlashTimer" type="Timer" parent="StartLabelTimers"]
+wait_time = 0.5
+autostart = true
+
+[node name="EndTimer" type="Timer" parent="StartLabelTimers"]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="StartLabelTimers/FlashTimer" to="." method="_on_FlashTimer_timeout"]
+[connection signal="timeout" from="StartLabelTimers/EndTimer" to="." method="_on_EndTimer_timeout"]
