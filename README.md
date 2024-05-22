@@ -1,3 +1,6 @@
+# Note: This project is no longer maintained. It was a fun learning project, and maybe if I feel nostalgic I'll come back to this one day. It's a nice cute project, but nothing amazing.
+
+
 # AsteroidWars2.0
 The new and updated version of Asteroid Wars! This version is a complete rewrite of the program, with tons of new features!
 The old one was written in Java, this version is in Godot. https://godotengine.org/
